@@ -1,340 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Consulta de Títulos</title>
-
 <style>
-
 body{
 margin:0;
 background:#d7d5e4;
-font-family:Helvetica, Arial, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 }
-
 /* BARRA SUPERIOR */
-
 .top{
 background:#2f236f;
-height:120px;
-}
-
-/* CONTENEDOR BLANCO */
-
-.main-box{
-background:white;
-width:92%;
-margin:0 auto;
-padding-bottom:40px;
+height:85px;
 display:flex;
-flex-direction:column;
+justify-content:space-between;
 align-items:center;
+padding:0 80px;
+color:white;
+font-size:18px;
+font-style:italic;
+font-weight:bold;
 }
-
-/* LOGO */
-
-.logo-top{
-padding:60px 0 30px;
+.top img{
+height:55px;
 }
-
-.logo-top img{
-width:140px;
-opacity:0.9;
+/* CONTENEDOR */
+.main{
+width:1280px;
+margin:10px auto;
+background:#efefef;
+border:1px solid #bbb;
 }
-
 /* MENU */
-
 .menu{
 background:#2f236f;
-width:100%;
-border-top:2px solid #4f5d8b;
-border-bottom:2px solid #4f5d8b;
-}
-
-.menu-top{
+height:42px;
 display:flex;
-justify-content:flex-end;
-padding:20px;
+align-items:center;
+padding-left:170px;
+gap:40px;
 }
-
-.menu-btn{
-background:#496487;
-border:none;
-color:white;
-font-size:38px;
-padding:12px 25px;
-border-radius:12px;
-cursor:pointer;
-}
-
-.dropdown{
-display:none;
-padding:10px 40px 40px;
-}
-
-.dropdown a{
-display:block;
+.menu a{
 color:white;
 text-decoration:none;
-font-size:30px;
-margin:45px 0;
+font-size:14px;
 }
-
-/* FORMULARIO */
-
-.container{
-background:#f5f5f5;
-width:82%;
-padding:30px;
-border:1px solid #cfcfcf;
-margin-top:40px;
+/* TITULO */
+.title{
+padding:25px 20px 10px;
+font-size:20px;
+color:#333;
 }
-
-label{
+.line{
+height:1px;
+background:#999;
+margin:0 20px 15px;
+}
+/* CONTENIDO */
+.content{
+display:flex;
+justify-content:space-between;
+padding:0 20px 30px;
+}
+/* FORM */
+.form-box{
+width:500px;
+background:#f3f3f3;
+border:1px solid #d4d4d4;
+padding:18px;
+}
+.form-box label{
 display:block;
-font-size:26px;
+font-size:13px;
 font-weight:bold;
-margin-bottom:15px;
-margin-top:20px;
+margin-bottom:8px;
+margin-top:12px;
 }
-
-input{
-width:100%;
-height:70px;
-border:2px solid #ddd;
-border-radius:10px;
-font-size:24px;
-padding-left:15px;
-box-sizing:border-box;
-margin-bottom:35px;
+.form-box input{
+width:260px;
+height:26px;
+border:1px solid #ccc;
+padding-left:10px;
+font-size:12px;
 }
-
+.captcha{
+display:flex;
+align-items:center;
+gap:15px;
+margin-top:10px;
+}
+.captcha-box{
+background:black;
+color:white;
+font-size:40px;
+padding:5px 18px;
+font-weight:bold;
+font-family:monospace;
+}
 .btn{
-width:100%;
-height:70px;
-background:#c3bddf;
+margin-top:15px;
+width:120px;
+height:35px;
+background:#7f78a8;
 color:white;
 border:none;
-border-radius:10px;
-font-size:28px;
+font-size:14px;
+cursor:pointer;
 }
-
-/* CUADROS */
-
+/* ALERTAS */
+.alerts{
+width:610px;
+}
 .alert{
-background:#efe9b7;
-border:5px solid #55739b;
-border-radius:18px;
-padding:25px;
-margin-top:40px;
-width:78%;
-font-size:23px;
+background:#efe8b0;
+border:2px solid #6082a3;
+border-radius:5px;
+padding:10px;
+margin-bottom:22px;
+font-size:12px;
 line-height:1.5;
-font-weight:bold;
-color:#222;
+color:#333;
 }
-
-.alert h2{
-color:#4f74a4;
-font-size:32px;
-margin-top:0;
+.alert h3{
+margin:0 0 8px;
+color:#4c76a4;
+font-size:15px;
 }
-
 /* FOOTER */
-
 .footer{
 background:white;
-width:85%;
-margin-top:40px;
-text-align:center;
-padding:40px 20px;
-border:1px solid #ccc;
+border-top:3px solid #bbb;
+padding:15px 25px 0;
 }
-
-.logo-footer{
-width:340px;
-margin-bottom:25px;
+.footer-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
-
-.footer p{
-font-size:22px;
-font-weight:bold;
-margin:15px 0;
+.footer img{
+width:180px;
 }
-
+.footer-text{
+text-align:right;
+font-size:12px;
+line-height:1.5;
+color:#333;
+}
 .lines{
-height:12px;
-margin-top:30px;
-
+height:7px;
+margin-top:10px;
 background:linear-gradient(
 to right,
-#e1c33d 33%,
-#214ea3 33%,
-#214ea3 66%,
-#d62d35 66%
+#e3c53b 33%,
+#2450a5 33%,
+#2450a5 66%,
+#d73038 66%
 );
 }
-
 </style>
-
 </head>
-
 <body>
-
-<div class="top"></div>
-
-<div class="main-box">
-
-<div class="logo-top">
+<div class="top">
+<div>
+Ministerio de Educación,<br>
+Deporte y Cultura
+</div>
 <img src="logo.png">
 </div>
-
+<div class="main">
 <div class="menu">
-
-<div class="menu-top">
-
-<button class="menu-btn"
-onclick="toggleMenu()">
-
-☰
-
-</button>
-
-</div>
-
-<div id="dropdown" class="dropdown">
-
 <a href="#">INICIO</a>
-
 <a href="#">
 CONSULTA DE TÍTULOS
 </a>
-
 <a href="#">
 ESTADO TÍTULOS EXTRANJEROS
 </a>
-
 </div>
-
+<div class="title">
+CONSULTA DE TÍTULOS REGISTRADOS
 </div>
-
-<div class="container">
-
+<div class="line"></div>
+<div class="content">
+<div class="form-box">
 <label>Apellidos</label>
-
 <input type="text"
 placeholder="Apellidos">
-
 <label>
 Identificación(Cédula/Pasaporte/D.I. País de origen)
 </label>
-
 <input type="text"
 placeholder="Identificación">
-
-<label>
-*Ingrese los caracteres
-</label>
-
-<input type="text">
-
-<button class="btn">
-
-Buscar
-
-</button>
-
+<label>*Ingrese los caracteres</label>
+<div class="captcha">
+<div class="captcha-box">
+16n7
 </div>
-
+<input type="text"
+style="width:110px;">
+</div>
+<button class="btn">
+Buscar
+</button>
+</div>
+<div class="alerts">
 <div class="alert">
-
-<h2>ATENCIÓN 1</h2>
-
+<h3>ATENCIÓN 1</h3>
 Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
-
 <br><br>
-
 <i>
 (Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)
 </i>
-
 </div>
-
 <div class="alert">
-
-<h2>ATENCIÓN 2</h2>
-
+<h3>ATENCIÓN 2</h3>
 El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
-
 <br><br>
-
 <i>
 Resolución RPC-SO-16-No.256-2016
 </i>
-
 </div>
-
 <div class="alert">
-
-<h2>ATENCIÓN 3</h2>
-
+<h3>ATENCIÓN 3</h3>
 La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
-
 </div>
-
+</div>
+</div>
 <div class="footer">
-
-<img src="logo.png"
-class="logo-footer">
-
-<p>
+<div class="footer-content">
+<img src="logo.png">
+<div class="footer-text">
 Punto de Atención al Usuario:
 Whymper E7-37 y Alpallana,
 edificio Delfos, Quito
-</p>
-
-<p>
+<br><br>
 Edificio Matriz:
-Av. Amazonas N34-451 y
-Av. Atahualpa Quito - Ecuador.
+Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador.
 Código Postal: 170507.
 Quito - Ecuador
-</p>
-
-<p>
+<br>
 Teléfono: (593 2)-023961400
-</p>
-
+</div>
+</div>
 <div class="lines"></div>
-
 </div>
-
 </div>
-
-<script>
-
-function toggleMenu(){
-
-const menu =
-document.getElementById("dropdown");
-
-if(menu.style.display === "block"){
-
-menu.style.display = "none";
-
-}else{
-
-menu.style.display = "block";
-
-}
-
-}
-
-</script>
-
 </body>
 </html>
