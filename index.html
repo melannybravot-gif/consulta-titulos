@@ -3,249 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Consulta de Títulos</title>
+
 <style>
+
 body{
-margin:0;
-background:#d7d5e4;
-font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#d7d6e8;
+    font-family: Arial, Helvetica, sans-serif;
 }
-/* BARRA SUPERIOR */
+
+/* HEADER */
+
 .top{
-background:#2f236f;
-height:85px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 80px;
-color:white;
-font-size:18px;
-font-style:italic;
-font-weight:bold;
+    background:#2f2673;
+    height:84px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
 }
+
 .top img{
-height:55px;
+    height:58px;
 }
+
+.top-left{
+    color:white;
+    font-size:16px;
+    font-style:italic;
+    font-weight:bold;
+    line-height:20px;
+}
+
 /* CONTENEDOR */
-.main{
-width:1280px;
-margin:10px auto;
-background:#efefef;
-border:1px solid #bbb;
+
+.container{
+    width:1280px;
+    margin:10px auto;
+    background:white;
+    border:1px solid #bdbdbd;
 }
+
 /* MENU */
+
 .menu{
-background:#2f236f;
-height:42px;
-display:flex;
-align-items:center;
-padding-left:170px;
-gap:40px;
+    background:#2f2673;
+    color:white;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    font-size:13px;
 }
-.menu a{
-color:white;
-text-decoration:none;
-font-size:14px;
+
+.menu div{
+    cursor:pointer;
 }
+
 /* TITULO */
+
 .title{
-padding:25px 20px 10px;
-font-size:20px;
-color:#333;
+    padding:22px 18px 10px;
+    font-size:20px;
+    color:#3d3d3d;
 }
+
 .line{
-height:1px;
-background:#999;
-margin:0 20px 15px;
+    border-top:1px solid #a7a7a7;
+    margin:0 18px;
 }
+
 /* CONTENIDO */
+
 .content{
-display:flex;
-justify-content:space-between;
-padding:0 20px 30px;
+    display:flex;
+    justify-content:space-between;
+    padding:14px 18px 30px;
 }
-/* FORM */
+
+/* FORMULARIO */
+
 .form-box{
-width:500px;
-background:#f3f3f3;
-border:1px solid #d4d4d4;
-padding:18px;
+    width:500px;
+    border:1px solid #d7d7d7;
+    padding:16px;
+    min-height:300px;
 }
-.form-box label{
-display:block;
-font-size:13px;
-font-weight:bold;
-margin-bottom:8px;
-margin-top:12px;
+
+label{
+    font-size:13px;
+    font-weight:bold;
+    color:#444;
 }
-.form-box input{
-width:260px;
-height:26px;
-border:1px solid #ccc;
-padding-left:10px;
-font-size:12px;
+
+input{
+    width:250px;
+    height:24px;
+    border:1px solid #cfcfcf;
+    margin-top:6px;
+    margin-bottom:14px;
+    padding-left:8px;
+    font-size:12px;
 }
+
 .captcha{
-display:flex;
-align-items:center;
-gap:15px;
-margin-top:10px;
+    display:flex;
+    gap:10px;
+    align-items:center;
 }
+
 .captcha-box{
-background:black;
-color:white;
-font-size:40px;
-padding:5px 18px;
-font-weight:bold;
-font-family:monospace;
+    width:115px;
+    height:34px;
+    background:#1d2236;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
-.btn{
-margin-top:15px;
-width:120px;
-height:35px;
-background:#7f78a8;
-color:white;
-border:none;
-font-size:14px;
-cursor:pointer;
+
+.captcha input{
+    width:95px;
+    margin:0;
 }
-/* ALERTAS */
+
+button{
+    width:115px;
+    height:32px;
+    background:#7269a8;
+    color:white;
+    border:none;
+    margin-top:8px;
+    cursor:pointer;
+}
+
+/* CUADROS */
+
 .alerts{
-width:610px;
+    width:560px;
 }
+
 .alert{
-background:#efe8b0;
-border:2px solid #6082a3;
-border-radius:5px;
-padding:10px;
-margin-bottom:22px;
-font-size:12px;
-line-height:1.5;
-color:#333;
+    background:#f6f0bd;
+    border:2px solid #5d7f9c;
+    border-radius:4px;
+    padding:12px;
+    margin-bottom:20px;
+    color:#333;
+    font-size:11px;
+    line-height:18px;
 }
+
 .alert h3{
-margin:0 0 8px;
-color:#4c76a4;
-font-size:15px;
+    margin:0 0 10px;
+    color:#4b6d97;
+    font-size:18px;
 }
+
 /* FOOTER */
+
 .footer{
-background:white;
-border-top:3px solid #bbb;
-padding:15px 25px 0;
+    border-top:1px solid #bdbdbd;
+    padding:14px 25px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-.footer-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+
 .footer img{
-width:180px;
+    width:170px;
 }
+
 .footer-text{
-text-align:right;
-font-size:12px;
-line-height:1.5;
-color:#333;
+    text-align:right;
+    font-size:11px;
+    color:#444;
+    line-height:16px;
 }
-.lines{
-height:7px;
-margin-top:10px;
-background:linear-gradient(
-to right,
-#e3c53b 33%,
-#2450a5 33%,
-#2450a5 66%,
-#d73038 66%
-);
+
+.colors{
+    display:flex;
+    height:6px;
+    margin-top:12px;
 }
+
+.yellow{
+    flex:1;
+    background:#e6c326;
+}
+
+.blue{
+    flex:1;
+    background:#1d53b8;
+}
+
+.red{
+    flex:1;
+    background:#d33b43;
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="top">
-<div>
-Ministerio de Educación,<br>
-Deporte y Cultura
+
+    <div class="top-left">
+        Ministerio de Educación,<br>
+        Deporte y Cultura
+    </div>
+
+    <img src="logo.png">
+
 </div>
-<img src="logo.png">
+
+<div class="container">
+
+    <div class="menu">
+        <div>INICIO</div>
+        <div>CONSULTA DE TÍTULOS</div>
+        <div>ESTADO TÍTULOS EXTRANJEROS</div>
+    </div>
+
+    <div class="title">
+        CONSULTA DE TÍTULOS REGISTRADOS
+    </div>
+
+    <div class="line"></div>
+
+    <div class="content">
+
+        <!-- FORM -->
+
+        <div class="form-box">
+
+            <label>Apellidos</label><br>
+            <input type="text" placeholder="Apellidos"><br>
+
+            <label>Identificación(Cédula/Pasaporte/D.I. País de origen)</label><br>
+            <input type="text" placeholder="Identificación"><br>
+
+            <label>*Ingrese los caracteres</label>
+
+            <div class="captcha">
+                <div class="captcha-box">16n7</div>
+                <input type="text">
+            </div>
+
+            <button>Buscar</button>
+
+        </div>
+
+        <!-- ALERTAS -->
+
+        <div class="alerts">
+
+            <div class="alert">
+                <h3>ATENCIÓN 1</h3>
+
+                Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
+
+                <br><br>
+
+                <i>(Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)</i>
+            </div>
+
+            <div class="alert">
+                <h3>ATENCIÓN 2</h3>
+
+                El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
+
+                <br><br>
+
+                <i>Resolución RPC-SO-16-No.256-2016</i>
+            </div>
+
+            <div class="alert">
+                <h3>ATENCIÓN 3</h3>
+
+                La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <img src="logo.png">
+
+        <div class="footer-text">
+            Punto de Atención al Usuario: Whymper E7-37 y Alpallana, edificio Delfos, Quito<br>
+
+            Edificio Matriz: Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador. Código Postal: 170507. Quito - Ecuador<br>
+
+            Teléfono: (593 2)-023961400
+        </div>
+
+    </div>
+
+    <div class="colors">
+        <div class="yellow"></div>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+
 </div>
-<div class="main">
-<div class="menu">
-<a href="#">INICIO</a>
-<a href="#">
-CONSULTA DE TÍTULOS
-</a>
-<a href="#">
-ESTADO TÍTULOS EXTRANJEROS
-</a>
-</div>
-<div class="title">
-CONSULTA DE TÍTULOS REGISTRADOS
-</div>
-<div class="line"></div>
-<div class="content">
-<div class="form-box">
-<label>Apellidos</label>
-<input type="text"
-placeholder="Apellidos">
-<label>
-Identificación(Cédula/Pasaporte/D.I. País de origen)
-</label>
-<input type="text"
-placeholder="Identificación">
-<label>*Ingrese los caracteres</label>
-<div class="captcha">
-<div class="captcha-box">
-16n7
-</div>
-<input type="text"
-style="width:110px;">
-</div>
-<button class="btn">
-Buscar
-</button>
-</div>
-<div class="alerts">
-<div class="alert">
-<h3>ATENCIÓN 1</h3>
-Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
-<br><br>
-<i>
-(Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)
-</i>
-</div>
-<div class="alert">
-<h3>ATENCIÓN 2</h3>
-El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
-<br><br>
-<i>
-Resolución RPC-SO-16-No.256-2016
-</i>
-</div>
-<div class="alert">
-<h3>ATENCIÓN 3</h3>
-La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
-</div>
-</div>
-</div>
-<div class="footer">
-<div class="footer-content">
-<img src="logo.png">
-<div class="footer-text">
-Punto de Atención al Usuario:
-Whymper E7-37 y Alpallana,
-edificio Delfos, Quito
-<br><br>
-Edificio Matriz:
-Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador.
-Código Postal: 170507.
-Quito - Ecuador
-<br>
-Teléfono: (593 2)-023961400
-</div>
-</div>
-<div class="lines"></div>
-</div>
-</div>
+
 </body>
 </html>
