@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <title>Consulta de Títulos</title>
@@ -7,18 +8,17 @@
 <style>
 
 body{
-    font-family: Arial, sans-serif;
-    background:#d9d8e8;
     margin:0;
-    padding:0;
+    font-family:Arial, sans-serif;
+    background:#d9d7e8;
 }
 
-.top{
+.arriba{
     background:#2d236d;
     height:120px;
 }
 
-.container{
+.recipient{
     width:400px;
     background:white;
     margin:50px auto;
@@ -54,29 +54,22 @@ input{
 
 button{
     width:100%;
-    background:#8d84c4;
+    padding:15px;
+    background:#7c74b8;
     color:white;
     border:none;
-    padding:15px;
-    margin-top:20px;
-    font-size:20px;
     border-radius:5px;
+    font-size:20px;
+    margin-top:20px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#6f66a8;
+    background:#655ca5;
 }
 
 #resultado{
     margin-top:20px;
-    font-size:18px;
-}
-
-a{
-    color:blue;
-    text-decoration:none;
-    font-weight:bold;
 }
 
 </style>
@@ -85,11 +78,11 @@ a{
 
 <body>
 
-<div class="top"></div>
+<div class="arriba"></div>
 
-<div class="container">
+<div class="recipient">
 
-<h1>CONSULTA DE TÍTULOS REGISTRADOS</h1>
+<h1>CONSULTA DE<br>TÍTULOS<br>REGISTRADOS</h1>
 
 <div class="linea"></div>
 
@@ -110,9 +103,9 @@ a{
 const datos = {
 
 "1234567890": {
-    nombre: "Juan Pérez",
-    titulo: "Ingeniero en Sistemas",
-    certificado: "1234567890.pdf"
+    nombre:"Juan Pérez",
+    titulo:"Ingeniero en Sistemas",
+    certificado:"1234567890.pdf"
 }
 
 };
@@ -120,6 +113,7 @@ const datos = {
 function consultar(){
 
 const cedula = document.getElementById("cedula").value;
+
 const resultado = document.getElementById("resultado");
 
 if(datos[cedula]){
