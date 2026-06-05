@@ -2,104 +2,167 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Consulta de Títulos</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#d8d7e6;
+margin:0;
+font-family:Arial,sans-serif;
+background:#d8d7e6;
 }
+
+/* POPUP */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.ventana{
+background:white;
+width:80%;
+max-width:700px;
+padding:30px;
+border-radius:10px;
+position:relative;
+font-size:20px;
+line-height:1.7;
+}
+
+.cerrar{
+position:absolute;
+right:20px;
+top:10px;
+font-size:40px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* ENCABEZADO */
 
 .arriba{
-    background:#24135f;
-    height:120px;
+background:#24135f;
+height:170px;
 }
 
+/* CONTENIDO */
+
 .contenedor{
-    width:420px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:10px;
+width:420px;
+max-width:90%;
+margin:-60px auto 40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 h1{
-    font-size:50px;
-    margin-bottom:20px;
+font-size:50px;
+margin-bottom:20px;
 }
 
 .linea{
-    border-top:2px solid gray;
-    margin-bottom:20px;
+border-top:2px solid gray;
+margin-bottom:20px;
 }
 
 label{
-    font-weight:bold;
-    display:block;
-    margin-top:15px;
-    margin-bottom:5px;
+font-weight:bold;
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+font-size:22px;
 }
 
 input{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-size:16px;
-}
-
-button{
-    width:100%;
-    padding:15px;
-    background:#7f78b7;
-    color:white;
-    border:none;
-    border-radius:5px;
-    font-size:22px;
-    margin-top:20px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#655ca7;
+width:100%;
+padding:14px;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:18px;
+box-sizing:border-box;
 }
 
 .captcha{
-    background:black;
-    color:white;
-    font-size:40px;
-    padding:10px;
-    margin-top:10px;
-    letter-spacing:5px;
+background:black;
+color:white;
+font-size:40px;
+padding:10px;
+margin-top:10px;
+letter-spacing:5px;
+font-weight:bold;
 }
 
+button{
+width:100%;
+padding:16px;
+background:#8a81c1;
+color:white;
+border:none;
+border-radius:5px;
+font-size:24px;
+margin-top:20px;
+cursor:pointer;
+}
+
+button:hover{
+background:#6c63a8;
+}
+
+/* RESULTADO */
+
+.resultado{
+background:#f5f5f5;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+font-size:20px;
+}
+
+/* AVISOS */
+
 .aviso{
-    background:#f6efbf;
-    border:4px solid #4f74a5;
-    border-radius:10px;
-    padding:20px;
-    margin-top:30px;
-    font-size:20px;
-    line-height:1.6;
+background:#f7efbf;
+border:4px solid #5076a5;
+border-radius:10px;
+padding:20px;
+margin-top:30px;
+font-size:20px;
+line-height:1.6;
 }
 
 .aviso h2{
-    color:#4f74a5;
+color:#5076a5;
+margin-top:0;
 }
 
+/* FOOTER */
+
 .footer{
-    background:white;
-    margin-top:40px;
-    text-align:center;
-    padding:30px;
+background:white;
+text-align:center;
+padding:40px;
+margin-top:40px;
+font-size:20px;
 }
 
 .logo{
-    font-size:60px;
-    font-weight:bold;
-    color:#2b1c84;
+font-size:60px;
+font-weight:bold;
+color:#24135f;
+margin-bottom:20px;
 }
 
 </style>
@@ -107,7 +170,41 @@ button:hover{
 
 <body>
 
+<!-- POPUP -->
+
+<div id="popup" class="popup">
+
+<div class="ventana">
+
+<span class="cerrar" onclick="cerrarPopup()">×</span>
+
+<h2>Cumplimiento de Sentencia</h2>
+
+<p>
+El 10 de febrero de 2026, la Sala Especializada de lo Laboral de la Corte Provincial de Justicia del Guayas dictó sentencia dentro del proceso Nro. 09901-2023-00048.
+</p>
+
+<p>
+i. Aceptar el recurso de apelación interpuesto.
+</p>
+
+<p>
+ii. Declarar la improcedencia de la acción presentada.
+</p>
+
+<p>
+En atención a lo dispuesto por la autoridad judicial, el Ministerio de Educación procedió al cumplimiento de la sentencia.
+</p>
+
+</div>
+
+</div>
+
+<!-- ENCABEZADO -->
+
 <div class="arriba"></div>
+
+<!-- CONTENIDO -->
 
 <div class="contenedor">
 
@@ -118,8 +215,8 @@ button:hover{
 <label>Apellidos</label>
 <input type="text" placeholder="Apellidos">
 
-<label>Identificación</label>
-<input type="text" id="cedula" placeholder="Cédula/Pasaporte">
+<label>Identificación (Cédula/Pasaporte)</label>
+<input type="text" id="cedula" placeholder="Ingrese identificación">
 
 <label>*Ingrese los caracteres</label>
 
@@ -131,37 +228,63 @@ button:hover{
 
 <div id="resultado"></div>
 
+<!-- AVISOS -->
+
 <div class="aviso">
+
 <h2>ATENCIÓN 1</h2>
 
 Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan.
+
 </div>
 
 <div class="aviso">
+
 <h2>ATENCIÓN 2</h2>
 
-El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas.
+El reconocimiento/registro del título no habilita al ejercicio de profesiones reguladas.
+
 </div>
 
 <div class="aviso">
+
 <h2>ATENCIÓN 3</h2>
 
 La información visualizada fue reportada por las instituciones de educación superior.
+
 </div>
 
 </div>
+
+<!-- FOOTER -->
 
 <div class="footer">
-<div class="logo">EL NUEVO ECUADOR</div>
+
+<div class="logo">
+EL NUEVO ECUADOR
+</div>
 
 <p>
 Punto de Atención al Usuario: Quito - Ecuador
 </p>
+
+<p>
+Teléfono: (593 2)-023961400
+</p>
+
 </div>
+
+<!-- SCRIPT -->
 
 <script>
 
 const datos = {
+
+"0956784321":{
+nombre:"Melanny Bravo",
+titulo:"Licenciada en Derecho",
+certificado:"melanny.pdf"
+},
 
 "1234567890":{
 nombre:"Juan Pérez",
@@ -181,7 +304,7 @@ if(datos[cedula]){
 
 resultado.innerHTML =
 
-"<div class='aviso'>" +
+"<div class='resultado'>" +
 
 "<h2>Resultado encontrado</h2>" +
 
@@ -189,7 +312,7 @@ resultado.innerHTML =
 
 "<p><b>Título:</b> " + datos[cedula].titulo + "</p>" +
 
-"<a href='1234567890.pdf' target='_blank'>Ver Certificado</a>" +
+"<a href='" + datos[cedula].certificado + "' target='_blank'>Ver Certificado</a>" +
 
 "</div>";
 
@@ -197,13 +320,19 @@ resultado.innerHTML =
 
 resultado.innerHTML =
 
-"<div class='aviso'>" +
+"<div class='resultado'>" +
 
 "<h2>No encontrado</h2>" +
 
 "</div>";
 
 }
+
+}
+
+function cerrarPopup(){
+
+document.getElementById("popup").style.display = "none";
 
 }
 
