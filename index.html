@@ -28,10 +28,26 @@
 
       if(datos[cedula]) {
         resultado.innerHTML =
-  "<h3>Resultado:</h3>" +
-  "<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
-  "<p><b>Título:</b> " + datos[cedula].titulo + "</p>" +
-  "<a href='" + datos[cedula].certificado + "' target='_blank'>Ver Certificado</a>";
+resultado.innerHTML =
+`
+<div style="border:2px solid #000;padding:20px;width:600px;margin-top:20px;font-family:Arial">
+    <h2 style="text-align:center;">CERTIFICADO DE TÍTULO</h2>
+
+    <p><b>Cédula:</b> ${cedula}</p>
+
+    <p><b>Nombre:</b> ${datos[cedula].nombre}</p>
+
+    <p><b>Título:</b> ${datos[cedula].titulo}</p>
+
+    <br>
+
+    <a href="${datos[cedula].certificado}" target="_blank"
+    style="background:#0066cc;color:white;padding:10px 15px;
+    text-decoration:none;border-radius:5px;">
+    Ver Certificado PDF
+    </a>
+</div>
+`;
       } else {
         resultado.innerHTML = "<p>No encontrado</p>";
       }
