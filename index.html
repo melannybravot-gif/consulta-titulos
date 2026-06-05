@@ -1,47 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Consulta de Títulos</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#d9d8e8;
+    margin:0;
+    padding:0;
+}
+
+.top{
+    background:#2d236d;
+    height:120px;
+}
+
+.container{
+    width:400px;
+    background:white;
+    margin:50px auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.linea{
+    border-top:2px solid gray;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    background:#8d84c4;
+    color:white;
+    border:none;
+    padding:15px;
+    margin-top:20px;
+    font-size:20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#6f66a8;
+}
+
+#resultado{
+    margin-top:20px;
+    font-size:18px;
+}
+
+a{
+    color:blue;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Sistema de Consulta de Títulos</h1>
+<div class="top"></div>
 
+<div class="container">
+
+<h1>CONSULTA DE TÍTULOS REGISTRADOS</h1>
+
+<div class="linea"></div>
+
+<label>Apellidos</label>
+<input type="text" placeholder="Apellidos">
+
+<label>Identificación</label>
 <input type="text" id="cedula" placeholder="Ingrese cédula">
-<button onclick="consultar()">Consultar</button>
+
+<button onclick="consultar()">Buscar</button>
 
 <div id="resultado"></div>
+
+</div>
 
 <script>
 
 const datos = {
-  "1234567890": {
+
+"1234567890": {
     nombre: "Juan Pérez",
     titulo: "Ingeniero en Sistemas",
     certificado: "1234567890.pdf"
-  }
+}
+
 };
 
-function consultar() {
+function consultar(){
 
-  const cedula = document.getElementById("cedula").value;
-  const resultado = document.getElementById("resultado");
+const cedula = document.getElementById("cedula").value;
+const resultado = document.getElementById("resultado");
 
-  if (datos[cedula]) {
+if(datos[cedula]){
 
-    resultado.innerHTML =
-      "<h3>Resultado</h3>" +
-      "<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
-      "<p><b>Título:</b> " + datos[cedula].titulo + "</p>" +
-      "<a href='1234567890.pdf' target='_blank'>Ver Certificado</a>";
+resultado.innerHTML =
+"<h3>Resultado encontrado</h3>" +
+"<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
+"<p><b>Título:</b> " + datos[cedula].titulo + "</p>" +
+"<a href='1234567890.pdf' target='_blank'>Ver Certificado</a>";
 
-  } else {
+}else{
 
-    resultado.innerHTML = "<p>No encontrado</p>";
+resultado.innerHTML = "<p>No encontrado</p>";
 
-  }
+}
 
 }
 
