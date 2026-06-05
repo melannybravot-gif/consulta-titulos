@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Títulos</title>
+</head>
+<body>
 
+  <h1>Sistema de Consulta de Títulos</h1>
+
+  <input type="text" id="cedula" placeholder="Ingrese cédula">
+  <button onclick="consultar()">Consultar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    const datos = {
+      "1234567890": {
+        nombre: "Juan Pérez",
+        titulo: "Ingeniero en Sistemas"
+      }
+    };
+
+    function consultar() {
+      const cedula = document.getElementById("cedula").value;
+      const resultado = document.getElementById("resultado");
+
+      if(datos[cedula]) {
+        resultado.innerHTML =
+          "<h3>Resultado:</h3>" +
+          "<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
+          "<p><b>Título:</b> " + datos[cedula].titulo + "</p>";
+      } else {
+        resultado.innerHTML = "<p>No encontrado</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
