@@ -15,11 +15,12 @@
 
   <script>
     const datos = {
-      "1234567890": {
-        nombre: "Juan Pérez",
-        titulo: "Ingeniero en Sistemas"
-      }
-    };
+  "1234567890": {
+    nombre: "Juan Perez",
+    titulo: "Ingeniero en Sistemas",
+    certificado: "1234567890.pdf"
+  }
+};
 
     function consultar() {
       const cedula = document.getElementById("cedula").value;
@@ -27,9 +28,10 @@
 
       if(datos[cedula]) {
         resultado.innerHTML =
-          "<h3>Resultado:</h3>" +
-          "<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
-          "<p><b>Título:</b> " + datos[cedula].titulo + "</p>";
+  "<h3>Resultado:</h3>" +
+  "<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
+  "<p><b>Título:</b> " + datos[cedula].titulo + "</p>" +
+  "<a href='certificados/" + datos[cedula].certificado + "' target='_blank'>Ver Certificado</a>";
       } else {
         resultado.innerHTML = "<p>No encontrado</p>";
       }
