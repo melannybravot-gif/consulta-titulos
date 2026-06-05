@@ -17,165 +17,158 @@ background:#d9d8e5;
 /* BARRA SUPERIOR */
 
 .top{
-background:#24145f;
-height:120px;
+background:#23145f;
+height:130px;
 }
 
 /* CONTENEDOR */
 
-.container{
+.contenedor{
 width:420px;
 margin:auto;
 margin-top:-40px;
 }
 
-/* LOGO */
+/* LOGO ARRIBA */
 
-.logo{
+.logo-mini{
 color:white;
 font-size:22px;
 font-weight:bold;
-padding-top:40px;
-padding-left:20px;
+margin-bottom:20px;
+margin-left:10px;
 }
 
 /* MENU */
 
 .menu{
-background:#2f2277;
+background:#2e206e;
 height:70px;
-border:2px solid #43379c;
+border:2px solid #4f4f8a;
 display:flex;
 justify-content:flex-end;
 align-items:center;
 padding-right:20px;
 }
 
-.menu-btn{
-width:60px;
-height:60px;
-border:2px solid #4f46c0;
-border-radius:10px;
-display:flex;
-justify-content:center;
-align-items:center;
+.menu-icon{
+font-size:38px;
 color:white;
-font-size:30px;
+border:2px solid #4f4f8a;
+padding:5px 15px;
+border-radius:10px;
 }
 
-/* CAJA */
+/* CAJA PRINCIPAL */
 
-.card{
+.caja{
 background:white;
-padding:30px;
-border-radius:20px;
+padding:35px;
+border-radius:15px;
 margin-top:10px;
 }
 
 /* TITULO */
 
-h1{
+.titulo{
 font-size:55px;
-line-height:55px;
+font-weight:bold;
+line-height:60px;
 margin-bottom:20px;
 }
 
 /* LINEA */
 
-.line{
+.linea{
 height:2px;
 background:#999;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
-/* INPUTS */
+/* FORMULARIO */
 
 label{
-font-size:18px;
+font-size:16px;
 font-weight:bold;
 display:block;
 margin-bottom:10px;
+margin-top:20px;
 }
 
 input{
 width:100%;
-padding:16px;
+padding:15px;
 font-size:20px;
-margin-bottom:25px;
 border:2px solid #ddd;
-border-radius:6px;
+border-radius:8px;
 box-sizing:border-box;
 }
-
-/* CAPTCHA */
 
 .captcha{
 background:black;
 color:white;
 font-size:60px;
 padding:10px;
+margin-top:15px;
 text-align:center;
 letter-spacing:5px;
-margin-bottom:10px;
 }
-
-/* BOTON */
 
 button{
 width:100%;
-padding:18px;
-background:#8c86b7;
+background:#8b83b5;
 border:none;
-color:white;
+padding:18px;
 font-size:30px;
+color:white;
 border-radius:8px;
+margin-top:20px;
 cursor:pointer;
 }
 
 /* RESULTADO */
 
-.resultado{
+#resultado{
 margin-top:30px;
-background:#f5f5f5;
-padding:20px;
-border-radius:10px;
-display:none;
+font-size:20px;
 }
 
 /* CUADROS */
 
 .alerta{
-background:#f7f1c6;
-border:4px solid #607d9b;
-padding:20px;
+background:#f7efb4;
+border:4px solid #7d8ca1;
+border-radius:15px;
+padding:25px;
 margin-top:30px;
-border-radius:12px;
-font-size:18px;
+font-size:16px;
 line-height:35px;
 }
 
 .alerta h2{
-color:#5d79a1;
+color:#5577aa;
+font-size:40px;
+margin-top:0;
 }
 
 /* FOOTER */
 
 .footer{
 background:white;
-padding:40px 20px;
-text-align:center;
 margin-top:40px;
+padding:40px;
+text-align:center;
 }
 
 .logo-footer{
-width:280px;
+width:400px;
+max-width:100%;
 margin-bottom:20px;
 }
 
 .footer p{
-font-size:16px;
-color:#222;
-margin:12px 0;
+font-size:20px;
+line-height:35px;
 }
 
 .lineas{
@@ -195,33 +188,33 @@ background:linear-gradient(to right,
 
 <div class="top"></div>
 
-<div class="container">
+<div class="contenedor">
 
-<div class="logo">
+<div class="logo-mini">
 EL NUEVO ECUADOR
 </div>
 
 <div class="menu">
-<div class="menu-btn">
+<div class="menu-icon">
 ☰
 </div>
 </div>
 
-<div class="card">
+<div class="caja">
 
-<h1>
+<div class="titulo">
 CONSULTA DE<br>
 TÍTULOS<br>
 REGISTRADOS
-</h1>
+</div>
 
-<div class="line"></div>
+<div class="linea"></div>
 
 <label>Apellidos</label>
-<input type="text" placeholder="Apellidos">
+<input type="text">
 
 <label>Identificación(Cédula/Pasaporte/D.I. País de origen)</label>
-<input type="text" id="cedula" placeholder="Identificación">
+<input type="text" id="cedula">
 
 <label>*Ingrese los caracteres</label>
 
@@ -235,27 +228,51 @@ REGISTRADOS
 Buscar
 </button>
 
-<div class="resultado" id="resultado"></div>
+<div id="resultado"></div>
+
+</div>
+
+<!-- CUADROS AMARILLOS -->
 
 <div class="alerta">
+
 <h2>ATENCIÓN 1</h2>
 
-Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos.
+<p>
+Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
+</p>
+
+<p>
+<i>(Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)</i>
+</p>
+
 </div>
 
 <div class="alerta">
+
 <h2>ATENCIÓN 2</h2>
 
-El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas.
+<p>
+El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
+</p>
+
+<p>
+<i>Resolución RPC-SO-16-No.256-2016</i>
+</p>
+
 </div>
 
 <div class="alerta">
+
 <h2>ATENCIÓN 3</h2>
 
-La información visualizada fue reportada por las instituciones de educación superior.
-</div>
+<p>
+La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
+</p>
 
 </div>
+
+<!-- FOOTER -->
 
 <div class="footer">
 
@@ -281,34 +298,54 @@ Teléfono: (593 2)-023961400
 
 <script>
 
+const datos = {
+
+"1234567890":{
+nombre:"Juan Pérez",
+titulo:"Ingeniero en Sistemas",
+universidad:"Universidad Central del Ecuador",
+fecha:"10/02/2026",
+certificado:"1234567890.pdf"
+}
+
+};
+
 function consultar(){
 
-const cedula = document.getElementById("cedula").value;
+const cedula =
+document.getElementById("cedula").value;
 
-const resultado = document.getElementById("resultado");
+const resultado =
+document.getElementById("resultado");
 
-if(cedula == "1234567890"){
-
-resultado.style.display = "block";
+if(datos[cedula]){
 
 resultado.innerHTML = `
+
 <h2>Resultado encontrado</h2>
 
-<p><b>Nombre:</b> Juan Pérez</p>
+<p><b>Nombre:</b>
+${datos[cedula].nombre}</p>
 
-<p><b>Título:</b> Ingeniero en Sistemas</p>
+<p><b>Título:</b>
+${datos[cedula].titulo}</p>
 
-<a href="1234567890.pdf" target="_blank">
-Ver Certificado
+<p><b>Universidad:</b>
+${datos[cedula].universidad}</p>
+
+<p><b>Fecha:</b>
+${datos[cedula].fecha}</p>
+
+<a href="${datos[cedula].certificado}" target="_blank">
+Ver certificado PDF
 </a>
+
 `;
 
 }else{
 
-resultado.style.display = "block";
-
 resultado.innerHTML = `
-<h2>No encontrado</h2>
+<p>No encontrado</p>
 `;
 
 }
