@@ -1,58 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Consulta de Títulos</title>
+<meta charset="UTF-8">
+<title>Consulta de Títulos</title>
 </head>
+
 <body>
 
-  <h1>Sistema de Consulta de Títulos</h1>
+<h1>Sistema de Consulta de Títulos</h1>
 
-  <input type="text" id="cedula" placeholder="Ingrese cédula">
-  <button onclick="consultar()">Consultar</button>
+<input type="text" id="cedula" placeholder="Ingrese cédula">
+<button onclick="consultar()">Consultar</button>
 
-  <div id="resultado"></div>
+<div id="resultado"></div>
 
-  <script>
-    const datos = {
+<script>
+
+const datos = {
   "1234567890": {
-    nombre: "Juan Perez",
+    nombre: "Juan Pérez",
     titulo: "Ingeniero en Sistemas",
     certificado: "1234567890.pdf"
   }
 };
 
-    function consultar() {
-      const cedula = document.getElementById("cedula").value;
-      const resultado = document.getElementById("resultado");
+function consultar() {
 
-      if(datos[cedula]) {
-        resultado.innerHTML =
-resultado.innerHTML =
-`
-<div style="border:2px solid #000;padding:20px;width:600px;margin-top:20px;font-family:Arial">
-    <h2 style="text-align:center;">CERTIFICADO DE TÍTULO</h2>
+  const cedula = document.getElementById("cedula").value;
+  const resultado = document.getElementById("resultado");
 
-    <p><b>Cédula:</b> ${cedula}</p>
+  if(datos[cedula]) {
 
-    <p><b>Nombre:</b> ${datos[cedula].nombre}</p>
+    resultado.innerHTML =
+      "<h3>Resultado</h3>" +
+      "<p><b>Nombre:</b> " + datos[cedula].nombre + "</p>" +
+      "<p><b>Título:</b> " + datos[cedula].titulo + "</p>" +
+      "<a href='1234567890.pdf' target='_blank'>Ver Certificado</a>";
 
-    <p><b>Título:</b> ${datos[cedula].titulo}</p>
+  } else {
 
-    <br>
+    resultado.innerHTML = "<p>No encontrado</p>";
 
-    <a href="${datos[cedula].certificado}" target="_blank"
-    style="background:#0066cc;color:white;padding:10px 15px;
-    text-decoration:none;border-radius:5px;">
-    Ver Certificado PDF
-    </a>
-</div>
-`;
-      } else {
-        resultado.innerHTML = "<p>No encontrado</p>";
-      }
-    }
-  </script>
+  }
+
+}
+
+</script>
 
 </body>
 </html>
