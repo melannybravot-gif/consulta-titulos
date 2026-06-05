@@ -3,356 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Consulta de Títulos</title>
-
 <style>
-
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#d9d8e5;
+background:#d9d8e6;
 }
-
 /* BARRA SUPERIOR */
-
 .top{
-background:#23145f;
+background:#2f226f;
 height:130px;
 }
-
-/* CONTENEDOR */
-
-.contenedor{
-width:420px;
-margin:auto;
-margin-top:-40px;
+/* LOGO */
+.logo-top{
+text-align:center;
+padding:70px 0 30px;
 }
-
-/* LOGO ARRIBA */
-
-.logo-mini{
-color:white;
-font-size:22px;
-font-weight:bold;
-margin-bottom:20px;
-margin-left:10px;
+.logo-top img{
+width:180px;
+opacity:0.9;
 }
-
 /* MENU */
-
 .menu{
-background:#2e206e;
-height:70px;
-border:2px solid #4f4f8a;
+background:#2f226f;
+border:2px solid #4e5c8a;
+margin:10px;
+}
+.menu-top{
 display:flex;
 justify-content:flex-end;
-align-items:center;
-padding-right:20px;
+padding:20px;
 }
-
-.menu-icon{
-font-size:38px;
+.menu-btn{
+background:#486283;
+border:none;
 color:white;
-border:2px solid #4f4f8a;
-padding:5px 15px;
-border-radius:10px;
+font-size:38px;
+padding:10px 25px;
+border-radius:12px;
+cursor:pointer;
 }
-
-/* CAJA PRINCIPAL */
-
-.caja{
-background:white;
-padding:35px;
-border-radius:15px;
-margin-top:10px;
+.dropdown{
+display:none;
+padding:10px 40px 40px;
 }
-
-/* TITULO */
-
-.titulo{
-font-size:55px;
-font-weight:bold;
-line-height:60px;
-margin-bottom:20px;
+.dropdown a{
+display:block;
+color:white;
+font-size:32px;
+text-decoration:none;
+margin:45px 0;
 }
-
-/* LINEA */
-
-.linea{
-height:2px;
-background:#999;
-margin-bottom:25px;
-}
-
 /* FORMULARIO */
-
+.container{
+background:white;
+margin:20px;
+padding:30px;
+border:1px solid #ccc;
+}
 label{
-font-size:16px;
+font-size:28px;
 font-weight:bold;
 display:block;
-margin-bottom:10px;
 margin-top:20px;
+margin-bottom:10px;
 }
-
 input{
 width:100%;
-padding:15px;
-font-size:20px;
+padding:22px;
+font-size:24px;
 border:2px solid #ddd;
 border-radius:8px;
 box-sizing:border-box;
 }
-
-.captcha{
-background:black;
-color:white;
-font-size:60px;
-padding:10px;
-margin-top:15px;
-text-align:center;
-letter-spacing:5px;
-}
-
-button{
+/* BOTON */
+.btn{
+margin-top:25px;
 width:100%;
-background:#8b83b5;
-border:none;
-padding:18px;
-font-size:30px;
+background:#b8b3d6;
 color:white;
+font-size:28px;
+padding:18px;
+border:none;
 border-radius:8px;
-margin-top:20px;
-cursor:pointer;
 }
-
-/* RESULTADO */
-
-#resultado{
-margin-top:30px;
-font-size:20px;
-}
-
 /* CUADROS */
-
-.alerta{
-background:#f7efb4;
-border:4px solid #7d8ca1;
-border-radius:15px;
+.alert{
+background:#efe9b7;
+border:5px solid #55739b;
+border-radius:18px;
 padding:25px;
-margin-top:30px;
-font-size:16px;
-line-height:35px;
+margin:40px 20px;
+font-size:23px;
+line-height:1.5;
+font-weight:bold;
+color:#222;
 }
-
-.alerta h2{
-color:#5577aa;
-font-size:40px;
+.alert h2{
+color:#4d73a3;
 margin-top:0;
+font-size:34px;
 }
-
 /* FOOTER */
-
 .footer{
 background:white;
-margin-top:40px;
-padding:40px;
+margin:20px;
+padding:30px;
 text-align:center;
+font-size:24px;
+font-weight:bold;
 }
-
 .logo-footer{
 width:400px;
-max-width:100%;
 margin-bottom:20px;
 }
-
-.footer p{
-font-size:20px;
-line-height:35px;
+.lines{
+height:12px;
+margin-top:25px;
+background:linear-gradient(
+to right,
+#e5c43a 33%,
+#1e4ba1 33%,
+#1e4ba1 66%,
+#d52c2c 66%
+);
 }
-
-.lineas{
-height:8px;
-margin-top:20px;
-background:linear-gradient(to right,
-#f4d03f 33%,
-#2e3192 33%,
-#2e3192 66%,
-#d91f26 66%);
-}
-
 </style>
 </head>
-
 <body>
-
 <div class="top"></div>
-
-<div class="contenedor">
-
-<div class="logo-mini">
-EL NUEVO ECUADOR
+<div class="logo-top">
+<img src="logo.png">
 </div>
-
 <div class="menu">
-<div class="menu-icon">
+<div class="menu-top">
+<button class="menu-btn" onclick="toggleMenu()">
 ☰
+</button>
+</div>
+<div id="dropdown" class="dropdown">
+<a href="#">INICIO</a>
+<a href="#">
+CONSULTA DE TÍTULOS
+</a>
+<a href="#">
+ESTADO TÍTULOS EXTRANJEROS
+</a>
 </div>
 </div>
-
-<div class="caja">
-
-<div class="titulo">
-CONSULTA DE<br>
-TÍTULOS<br>
-REGISTRADOS
-</div>
-
-<div class="linea"></div>
-
+<div class="container">
 <label>Apellidos</label>
-<input type="text">
-
-<label>Identificación(Cédula/Pasaporte/D.I. País de origen)</label>
-<input type="text" id="cedula">
-
+<input type="text" placeholder="Apellidos">
+<label>
+Identificación(Cédula/Pasaporte/D.I. País de origen)
+</label>
+<input type="text"
+placeholder="Identificación">
 <label>*Ingrese los caracteres</label>
-
-<div class="captcha">
-1lmr
-</div>
-
 <input type="text">
-
-<button onclick="consultar()">
+<button class="btn">
 Buscar
 </button>
-
-<div id="resultado"></div>
-
 </div>
-
-<!-- CUADROS AMARILLOS -->
-
-<div class="alerta">
-
+<div class="alert">
 <h2>ATENCIÓN 1</h2>
-
-<p>
 Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
-</p>
-
-<p>
-<i>(Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)</i>
-</p>
-
+<br><br>
+<i>
+(Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)
+</i>
 </div>
-
-<div class="alerta">
-
+<div class="alert">
 <h2>ATENCIÓN 2</h2>
-
-<p>
 El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
-</p>
-
-<p>
-<i>Resolución RPC-SO-16-No.256-2016</i>
-</p>
-
+<br><br>
+<i>
+Resolución RPC-SO-16-No.256-2016
+</i>
 </div>
-
-<div class="alerta">
-
+<div class="alert">
 <h2>ATENCIÓN 3</h2>
-
-<p>
 La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
-</p>
-
 </div>
-
-<!-- FOOTER -->
-
 <div class="footer">
-
-<img src="./logo.png" class="logo-footer">
-
+<img src="logo.png" class="logo-footer">
 <p>
-Punto de Atención al Usuario: Whymper E7-37 y Alpallana, edificio Delfos, Quito
+Punto de Atención al Usuario:
+Whymper E7-37 y Alpallana, edificio Delfos, Quito
 </p>
-
 <p>
-Edificio Matriz: Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador
+Edificio Matriz:
+Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador.
+Código Postal: 170507. Quito - Ecuador
 </p>
-
 <p>
 Teléfono: (593 2)-023961400
 </p>
-
-<div class="lineas"></div>
-
+<div class="lines"></div>
 </div>
-
-</div>
-
 <script>
-
-const datos = {
-
-"1234567890":{
-nombre:"Juan Pérez",
-titulo:"Ingeniero en Sistemas",
-universidad:"Universidad Central del Ecuador",
-fecha:"10/02/2026",
-certificado:"1234567890.pdf"
-}
-
-};
-
-function consultar(){
-
-const cedula =
-document.getElementById("cedula").value;
-
-const resultado =
-document.getElementById("resultado");
-
-if(datos[cedula]){
-
-resultado.innerHTML = `
-
-<h2>Resultado encontrado</h2>
-
-<p><b>Nombre:</b>
-${datos[cedula].nombre}</p>
-
-<p><b>Título:</b>
-${datos[cedula].titulo}</p>
-
-<p><b>Universidad:</b>
-${datos[cedula].universidad}</p>
-
-<p><b>Fecha:</b>
-${datos[cedula].fecha}</p>
-
-<a href="${datos[cedula].certificado}" target="_blank">
-Ver certificado PDF
-</a>
-
-`;
-
+function toggleMenu(){
+const menu =
+document.getElementById("dropdown");
+if(menu.style.display === "block"){
+menu.style.display = "none";
 }else{
-
-resultado.innerHTML = `
-<p>No encontrado</p>
-`;
-
+menu.style.display = "block";
 }
-
 }
-
 </script>
-
 </body>
 </html>
