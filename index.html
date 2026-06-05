@@ -1,217 +1,340 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Consulta de Títulos</title>
+
 <style>
+
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#d9d8e6;
+background:#d7d5e4;
+font-family:Helvetica, Arial, sans-serif;
 }
+
 /* BARRA SUPERIOR */
+
 .top{
-background:#2f226f;
-height:130px;
+background:#2f236f;
+height:120px;
 }
+
+/* CONTENEDOR BLANCO */
+
+.main-box{
+background:white;
+width:92%;
+margin:0 auto;
+padding-bottom:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
 /* LOGO */
+
 .logo-top{
-text-align:center;
-padding:70px 0 30px;
+padding:60px 0 30px;
 }
+
 .logo-top img{
-width:180px;
+width:140px;
 opacity:0.9;
 }
+
 /* MENU */
+
 .menu{
-background:#2f226f;
-border:2px solid #4e5c8a;
-margin:10px;
+background:#2f236f;
+width:100%;
+border-top:2px solid #4f5d8b;
+border-bottom:2px solid #4f5d8b;
 }
+
 .menu-top{
 display:flex;
 justify-content:flex-end;
 padding:20px;
 }
+
 .menu-btn{
-background:#486283;
+background:#496487;
 border:none;
 color:white;
 font-size:38px;
-padding:10px 25px;
+padding:12px 25px;
 border-radius:12px;
 cursor:pointer;
 }
+
 .dropdown{
 display:none;
 padding:10px 40px 40px;
 }
+
 .dropdown a{
 display:block;
 color:white;
-font-size:32px;
 text-decoration:none;
+font-size:30px;
 margin:45px 0;
 }
+
 /* FORMULARIO */
+
 .container{
-background:white;
-margin:20px;
+background:#f5f5f5;
+width:82%;
 padding:30px;
-border:1px solid #ccc;
+border:1px solid #cfcfcf;
+margin-top:40px;
 }
+
 label{
-font-size:28px;
-font-weight:bold;
 display:block;
+font-size:26px;
+font-weight:bold;
+margin-bottom:15px;
 margin-top:20px;
-margin-bottom:10px;
 }
+
 input{
 width:100%;
-padding:22px;
-font-size:24px;
+height:70px;
 border:2px solid #ddd;
-border-radius:8px;
+border-radius:10px;
+font-size:24px;
+padding-left:15px;
 box-sizing:border-box;
+margin-bottom:35px;
 }
-/* BOTON */
+
 .btn{
-margin-top:25px;
 width:100%;
-background:#b8b3d6;
+height:70px;
+background:#c3bddf;
 color:white;
-font-size:28px;
-padding:18px;
 border:none;
-border-radius:8px;
+border-radius:10px;
+font-size:28px;
 }
+
 /* CUADROS */
+
 .alert{
 background:#efe9b7;
 border:5px solid #55739b;
 border-radius:18px;
 padding:25px;
-margin:40px 20px;
+margin-top:40px;
+width:78%;
 font-size:23px;
 line-height:1.5;
 font-weight:bold;
 color:#222;
 }
+
 .alert h2{
-color:#4d73a3;
+color:#4f74a4;
+font-size:32px;
 margin-top:0;
-font-size:34px;
 }
+
 /* FOOTER */
+
 .footer{
 background:white;
-margin:20px;
-padding:30px;
+width:85%;
+margin-top:40px;
 text-align:center;
-font-size:24px;
-font-weight:bold;
+padding:40px 20px;
+border:1px solid #ccc;
 }
+
 .logo-footer{
-width:400px;
-margin-bottom:20px;
+width:340px;
+margin-bottom:25px;
 }
+
+.footer p{
+font-size:22px;
+font-weight:bold;
+margin:15px 0;
+}
+
 .lines{
 height:12px;
-margin-top:25px;
+margin-top:30px;
+
 background:linear-gradient(
 to right,
-#e5c43a 33%,
-#1e4ba1 33%,
-#1e4ba1 66%,
-#d52c2c 66%
+#e1c33d 33%,
+#214ea3 33%,
+#214ea3 66%,
+#d62d35 66%
 );
 }
+
 </style>
+
 </head>
+
 <body>
+
 <div class="top"></div>
+
+<div class="main-box">
+
 <div class="logo-top">
 <img src="logo.png">
 </div>
+
 <div class="menu">
+
 <div class="menu-top">
-<button class="menu-btn" onclick="toggleMenu()">
+
+<button class="menu-btn"
+onclick="toggleMenu()">
+
 ☰
+
 </button>
+
 </div>
+
 <div id="dropdown" class="dropdown">
+
 <a href="#">INICIO</a>
+
 <a href="#">
 CONSULTA DE TÍTULOS
 </a>
+
 <a href="#">
 ESTADO TÍTULOS EXTRANJEROS
 </a>
+
 </div>
+
 </div>
+
 <div class="container">
+
 <label>Apellidos</label>
-<input type="text" placeholder="Apellidos">
+
+<input type="text"
+placeholder="Apellidos">
+
 <label>
 Identificación(Cédula/Pasaporte/D.I. País de origen)
 </label>
+
 <input type="text"
 placeholder="Identificación">
-<label>*Ingrese los caracteres</label>
+
+<label>
+*Ingrese los caracteres
+</label>
+
 <input type="text">
+
 <button class="btn">
+
 Buscar
+
 </button>
+
 </div>
+
 <div class="alert">
+
 <h2>ATENCIÓN 1</h2>
+
 Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
+
 <br><br>
+
 <i>
 (Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)
 </i>
+
 </div>
+
 <div class="alert">
+
 <h2>ATENCIÓN 2</h2>
+
 El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
+
 <br><br>
+
 <i>
 Resolución RPC-SO-16-No.256-2016
 </i>
+
 </div>
+
 <div class="alert">
+
 <h2>ATENCIÓN 3</h2>
+
 La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
+
 </div>
+
 <div class="footer">
-<img src="logo.png" class="logo-footer">
+
+<img src="logo.png"
+class="logo-footer">
+
 <p>
 Punto de Atención al Usuario:
-Whymper E7-37 y Alpallana, edificio Delfos, Quito
+Whymper E7-37 y Alpallana,
+edificio Delfos, Quito
 </p>
+
 <p>
 Edificio Matriz:
-Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador.
-Código Postal: 170507. Quito - Ecuador
+Av. Amazonas N34-451 y
+Av. Atahualpa Quito - Ecuador.
+Código Postal: 170507.
+Quito - Ecuador
 </p>
+
 <p>
 Teléfono: (593 2)-023961400
 </p>
+
 <div class="lines"></div>
+
 </div>
+
+</div>
+
 <script>
+
 function toggleMenu(){
+
 const menu =
 document.getElementById("dropdown");
+
 if(menu.style.display === "block"){
+
 menu.style.display = "none";
+
 }else{
+
 menu.style.display = "block";
+
 }
+
 }
+
 </script>
+
 </body>
 </html>
