@@ -82,6 +82,7 @@ body{
     display:flex;
     justify-content:space-between;
     padding:14px 18px 30px;
+    gap:30px;
 }
 
 /* FORMULARIO */
@@ -207,6 +208,89 @@ button{
     background:#d33b43;
 }
 
+/* RESPONSIVE CELULAR */
+
+@media screen and (max-width: 768px){
+
+.container{
+    width:95%;
+}
+
+.top{
+    padding:0 20px;
+    height:90px;
+}
+
+.top img{
+    height:45px;
+}
+
+.top-left{
+    font-size:14px;
+    line-height:18px;
+}
+
+.menu{
+    flex-direction:column;
+    height:auto;
+    padding:15px 0;
+    gap:20px;
+    font-size:16px;
+}
+
+.title{
+    font-size:16px;
+}
+
+.content{
+    flex-direction:column;
+    gap:20px;
+}
+
+.form-box{
+    width:auto;
+}
+
+.alerts{
+    width:auto;
+}
+
+.alert{
+    font-size:14px;
+    line-height:28px;
+}
+
+.alert h3{
+    font-size:18px;
+}
+
+input{
+    width:90%;
+}
+
+.captcha{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.footer{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+}
+
+.footer-text{
+    text-align:center;
+    font-size:13px;
+    line-height:22px;
+}
+
+.footer img{
+    width:220px;
+}
+
+}
+
 </style>
 </head>
 
@@ -239,7 +323,7 @@ button{
 
     <div class="content">
 
-        <!-- FORM -->
+        <!-- FORMULARIO -->
 
         <div class="form-box">
 
@@ -260,11 +344,12 @@ button{
 
         </div>
 
-        <!-- ALERTAS -->
+        <!-- CUADROS -->
 
         <div class="alerts">
 
             <div class="alert">
+
                 <h3>ATENCIÓN 1</h3>
 
                 Las instituciones de educación superior nacionales serán responsables del registro de los títulos que emitan, previa verificación del cumplimiento de los requisitos legales y académicos. La información registrada será parte del Sistema Nacional de Información de la Educación Superior y este será el único medio oficial a través del cual se verificará el reconocimiento y validez del título en el Ecuador.
@@ -272,9 +357,11 @@ button{
                 <br><br>
 
                 <i>(Reglamento General a la Ley Orgánica de Educación Superior, Art. 56)</i>
+
             </div>
 
             <div class="alert">
+
                 <h3>ATENCIÓN 2</h3>
 
                 El reconocimiento/registro del título no habilita al ejercicio de las profesiones reguladas por leyes específicas, y de manera especial al ejercicio de las profesiones que pongan en riesgo de modo directo la vida, salud y seguridad ciudadana conforme el artículo 104 de la Ley Orgánica de Educación Superior.
@@ -282,28 +369,35 @@ button{
                 <br><br>
 
                 <i>Resolución RPC-SO-16-No.256-2016</i>
+
             </div>
 
             <div class="alert">
+
                 <h3>ATENCIÓN 3</h3>
 
                 La información que se visualiza en el área o campo de conocimiento, fue reportada por las instituciones de educación superior el momento de crear la carrera o programa, con base en la autonomía responsable, de conformidad con lo que establece la Ley Orgánica de Educación Superior en el Art. 17.
+
             </div>
 
         </div>
 
     </div>
 
+    <!-- FOOTER -->
+
     <div class="footer">
 
         <img src="logo.png">
 
         <div class="footer-text">
+
             Punto de Atención al Usuario: Whymper E7-37 y Alpallana, edificio Delfos, Quito<br>
 
             Edificio Matriz: Av. Amazonas N34-451 y Av. Atahualpa Quito - Ecuador. Código Postal: 170507. Quito - Ecuador<br>
 
             Teléfono: (593 2)-023961400
+
         </div>
 
     </div>
